@@ -6,7 +6,7 @@
 body {
   padding-top: 50px;
   background-color: #800000;
-  color: 000;
+  color: #000;
 }
 
 
@@ -84,6 +84,10 @@ body {
   margin-top: 0;
   padding-top: 10px;
   padding-right: 20px;
+ }
+
+ .navmenu-inverse {
+  background-color: #000;
  }
 
 /*
