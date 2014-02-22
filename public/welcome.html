@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +18,9 @@
   <!-- Custom styles for this template -->
   <link href="bower_components/bootstrap-jasny/examples/navmenu-push/navmenu-push.css" rel="stylesheet">
   <link href="stylesheets/dashboard.css" rel="stylesheet">
+
+  <script src="node_modules/angular/lib/angular.min.js"> </script>
+  <script type="text/javascript" src="javascripts/course.js"></script>
 
 
   <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -76,7 +79,7 @@
 
 
 
-      <div class="container-fluid">
+      <div class="container-fluid" ng-controller="courseCtrl">
         <div class="row">
           
             <!--<ul class="navmenu navmenu-default navmenu-fixed-left offcanvas">
@@ -105,29 +108,12 @@
             <h1 class="page-header">Your Courses</h1>
 
             <div class="row placeholders">
-              <div class="col-xs-6 col-sm-3 placeholder">
+              <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="course in courses">
                 <a href = "#">
                 <img class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>CSCI 2341</h4>
-                <span class="text-muted">Dr. Porter Scobey </span>
+                <h4>{{course.code}}</h4>
+                <span class="text-muted">{{course.prof}}</span>
               </div>
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <a href = "#">
-                <img  class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>CSCI 2308</h4>
-                <span class="text-muted">Dr. Paul Muir</span>
-              </div>
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <a href = "#">
-                <img  class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>CSCI 1226</h4>
-                <span class="text-muted">Dr. Pawan Lingras</span>
-              </div>
-              <div class="col-xs-6 col-sm-3 placeholder">
-                <a href = "#">
-                <img class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>CSCI 2328</h4>
-                <span class="text-muted">Dr. Norma Linney</span>
               </div>
             </div>
           </div>
