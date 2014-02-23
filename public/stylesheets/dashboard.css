@@ -19,6 +19,17 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.form-control {
+margin-top: 8px;
+width: 240px;
+}
+
+.btn-sm {
+  margin-top: -65px;
+  margin-left: 320px;
+}
+
+
 
 /*
  * Sidebar

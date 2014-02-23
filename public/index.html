@@ -91,9 +91,9 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>What is SMUNITY?</h1>
-              <p>SMUnity is a mobile­friendly web­based academic network for Saint Mary’s <br />
-                that provides easy access to commonly used SMU services and an easy way to <br />
-                connect with your friends and classmates for help.</p>
+              <p>SMUnity is a mobile­friendly web­based <br />academic network for Saint Mary’s 
+                that provides easy access to commonly<br /> used SMU services and an easy way<br /> to 
+                connect with your friends  <br />and classmates for help.</p>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
               </div>
             </div>
@@ -103,9 +103,9 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1>What Else?</h1>
-                <p>SMUnity includes facilities for finding collaborators for your projects, <br />
-                  including the ability to advertise skills on your profile, <br />
-                  to post projects that need collaborators in the SMUnity Market</p>
+                <p>SMUnity includes facilities for finding collaborators for your projects,
+                  including the ability to advertise skills<br /> on your profile,
+                  to post projects that<br />need collaborators in the SMUnity Market</p>
                   <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                 </div>
               </div>
@@ -118,10 +118,10 @@
         <!--signin-->
         <div class="container">
 
-          <form class="form-signin" role="form">
+          <form class="form-signin" role="form" action="/signup" method="post">
             <h2 class="form-signin-heading">Please sign in</h2>
-            <input type="text" class="form-control" placeholder="Banner ID" required autofocus>
-            <input type="password" class="form-control" placeholder="Password" required>
+            <input type="text" name="id" class="form-control" placeholder="Banner ID" required autofocus>
+            <input type="password" name="pass" class="form-control" placeholder="Password" required>
             <label class="checkbox">
               <input type="checkbox" value="remember-me"> Remember me
             </label>
@@ -129,11 +129,14 @@
             
           </form>
           <script>
+          /*
           function signingIn()
           {
           window.open("welcome.html", "_self");
           }
-            </script>
+          */
+            </script> 
+
 
         </div> <!-- /container -->
 
