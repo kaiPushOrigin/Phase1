@@ -45,8 +45,10 @@ app.post('/signup', function(req, res) {
 
 			localService.detailSchedule({ /*'startDate': new Date()*/ }, function(error, response, courses) {
 				console.log("Completed!", courses);
+				res.send(courses);
 			});
-			res.redirect('/welcome.html');
+			//res.send(courses)
+			//res.redirect('/welcome.html');
 		}
 	});
 });
