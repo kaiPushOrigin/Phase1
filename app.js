@@ -9,6 +9,7 @@
  var http = require('http');
  var path = require('path');
  var selfService = require('./modules/Self-Service/lib');
+ var s = new selfService;
 
  var app = express();
 
@@ -38,7 +39,7 @@ app.post('/signup', function(req, res) {
 
 	var username = req.body.id;
 	var password = req.body.pass;
-	var s = new selfService;
+	
 	s.login({'username': username, 'password': password }, function(error, response, localService) {
 		if (error != null){}
 		else{
