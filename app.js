@@ -5,6 +5,7 @@
 
  // var express = require('express');
  var mongoose = require('mongoose');
+ var request = require('request');
 
  var feathers = require('feathers');
  var routes = require('./routes');
@@ -90,7 +91,17 @@ app.post('/signup', function(req, res) {
 
 			localService.detailSchedule({ /*'startDate': new Date()*/ }, function(error, response, courses) {
 				console.log("Completed!", courses);
-				res.send(courses);
+				var options = {
+					header: {"content-type":"application/json"},
+					method: 'POST',
+				  	uri:     'http://localhost:3000/api/users',
+				  	json:    {"A": username, "courses": courses}
+				};
+				request(options, function(error, response, body){
+					if (!error && response.statusCode == 200) {
+				  		console.log(body);
+					}
+				});
 			});
 			//res.send(courses)
 			//res.redirect('/welcome.html');
@@ -98,6 +109,16 @@ app.post('/signup', function(req, res) {
 	});
 });
 
-http.createServer(app).listen(app.get('port'), function(){
+var UsersService = require('./db.js')(connection);
+
+app.configure(feathers.socketio())
+  .use(feathers.static(__dirname))
+  .use('/api/users', new UsersService())
+  .listen(app.get('port'), function() {
+        console.log('Express server listening on port ' + app.get('port'));
+    });
+
+
+/*http.createServer(app).listen(app.get('port'), function(){
 	console.log('feathers server listening on port ' + app.get('port'));
-});
+});*/
