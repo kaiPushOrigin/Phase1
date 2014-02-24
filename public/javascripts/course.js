@@ -17,12 +17,11 @@ SMUnity.controller('courseCtrl', ['$scope', '$location', '$http', function ($sco
     .success(function(data){
         console.log("SUCCESS");
         $scope.courses = data[0].courses;
-        console.log($scope.courses);
+        //console.log($scope.courses);
     }).error(function() {
         console.log("FAIL");
         $scope.courses = [
 		{code:'CSCI 2341' , prof:'Dr. Porter Scobey' }
 		];
 	});
-	$scope.courses = $location.search().A;
 }]);
