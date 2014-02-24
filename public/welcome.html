@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="SMUnity">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,7 @@
   <link href="stylesheets/dashboard.css" rel="stylesheet">
 
   <script src="node_modules/angular/lib/angular.min.js"> </script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="javascripts/course.js"></script>
 
 
@@ -83,11 +84,11 @@
             <h1 class="page-header">Your Courses</h1>
 
             <div class="row placeholders">
-              <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="course in courses">
+              <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="course in courses track by $index">
                 <a href = "#">
                 <img class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4>{{course.code}}</h4>
-                <span class="text-muted">{{course.prof}}</span>
+                <h4>{{course.subject}}</h4>
+                <span class="text-muted">{{course.instructors}}</span>
               </div>
 
               </div>

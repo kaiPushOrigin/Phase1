@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 module.exports = function(connection){
 
 var User = new Schema({
-	name: {type: String, required : false, index: {unique: true, dropDups: true}},
-	A: {type: String, required : false, index: {unique: true, dropDups: true}},
+	name: String, 
+	A: {type : String, required : true, index: {unique: true, dropDups: true}},
 	hash: String,
 	courses: Array
 })

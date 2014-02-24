@@ -18,7 +18,7 @@
  var s = new selfService;
 
  // Connect to Mongo
-var connection = mongoose.connect('mongodb://localhost/test');
+var connection = mongoose.connect('mongodb://localhost/test3');
 /*var db = mongoose.connection();
 db.on('open', function () {
   // now we can start talking
@@ -102,11 +102,27 @@ app.post('/signup', function(req, res) {
 				  		console.log(body);
 					}
 				});
+				
 			});
 			//res.send(courses)
 			//res.redirect('/welcome.html');
 		}
 	});
+
+	var query = "?A=" + username;
+	res.redirect("welcome.html" + query);
+
+	/* options = {
+		method: 'GET',
+		url: 'http://localhost:3000/welcome.html',
+		qs: {"A": username}
+	};
+	console.log("A="+username);
+	res.send(request(options, function(error,response, body){
+		console.log("A="+username);
+		//res.send(body);
+
+	}) );   */
 });
 
 var UsersService = require('./db.js')(connection);
