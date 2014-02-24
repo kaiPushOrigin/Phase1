@@ -1,0 +1,3 @@
+[submodule "Self-Service"]
+	path = Self-Service
+	url = https://github.com/DylanYoung/Self-Service.git
