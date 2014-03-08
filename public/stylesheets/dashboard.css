@@ -5,10 +5,12 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
-  /*background-color: #800000;*/
-  /*background-image:url('../background.png');*/
+  background-color: #800000;
+ /* background-image:url('../b1.jpg');
+  background-size: 100% 100%;*/
   color: #fff;
 }
+
 
 
 /*
@@ -22,12 +24,12 @@ body {
 
 .form-control {
 margin-top: 8px;
-width: 235px;
+width: 225px;
 }
 
 .btn-success {
   margin-top: -57px;
-  margin-left: 240px;
+  margin-left: 235px;
 }
 
 
@@ -158,6 +160,7 @@ width: 235px;
   padding-left: 14px;
   padding-bottom: 0px;
 }
+
 
 
 
