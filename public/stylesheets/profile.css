@@ -1,6 +1,5 @@
 #profileImg {
 	
-	
 	margin-top: -20px;
 
 }
@@ -8,12 +7,34 @@
 #contactDetails {
 	
 	margin-right: -18px;
-
-	float: right;
+    float: right;
 }
 
 #msg {
 
 	float: right;
 	margin-right: 25px;
+}
+
+#offering {
+
+	font-size: 100%;
+}
+
+#endorseOffer {
+
+	margin-left: 30px;
+
+}
+
+#endorseButton {
+
+	float: right;
+	margin-top: -25px;
+}
+
+#endorseValue {
+	font-size: 120%;
+	padding-bottom: 1px;
+	padding-top: 2px;
 }
