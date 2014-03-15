@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="SMUnity">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,10 @@
   <link href="stylesheets/dashboard.css" rel="stylesheet">
   <link href="stylesheets/jumbotron.css" rel="stylesheet">
 
+  <script src="node_modules/angular/lib/angular.min.js"> </script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="javascripts/course.js"></script>
+
 
   <!-- Just for debugging purposes. Don't actually copy this line! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -32,7 +36,6 @@
     </head>
 
     <body>
-
 
 
 
@@ -50,45 +53,24 @@
      </form>
    </div>
 
-   <div class="navmenu navmenu-inverse navmenu-fixed-left offcanvas">
-    <a class="navmenu-brand" href="#">Your Menu</a>
-    <ul class="nav navmenu-nav">
-      <li class="active"><a href="welcome.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-book"></span> Courses</a></li>
-      <li><a href="market.html"><span class="glyphicon glyphicon-shopping-cart"></span> Market</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-flag"></span> Events</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-user"></span> People</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-question-sign"></span> Questions</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-info-sign"></span> Links</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-phone"></span> My SMU Contacts</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-time"></span> Calendar</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-globe"></span> Map</a></li>
-      <li><a href="../navmenu-reveal/"><span class="glyphicon glyphicon-dashboard"></span> Upcoming Events</a></li>
-    </ul>
-  </div>
+<!--#include file="leftSlider.html"-->
 
+      <div class="container-fluid" ng-controller="courseCtrl">
+        <div class="row">
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Your Courses...</h1>
-    </div>
-  </div>
+         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Your Courses</h1>
 
-  <div class="container-fluid">
-      <div class="row">
-        <div class="row placeholders">
-          <div class="col-xs-6 col-sm-3 placeholder porter">
-            <a href = "#">
-              <img class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>CSCI 2341</h4>
-              <span class="text-muted">Dr. Porter Scobey </span>
-          </div>
-
-          <div class="col-xs-6 col-sm-3 placeholder">
-              <a href = "#">
+            <div class="row placeholders">
+              <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="course in courses track by $index">
+                <a href = "#">
                 <img class="img-responsive" alt="Generic placeholder thumbnail">
-                <h4> CSCI 2308</h4>
-                <span class="text-muted">Dr. Paul Muir</span>
+                <h4>{{course.subject}}</h4>
+                <span class="text-muted">{{course.instructors}}</span>
+              </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
