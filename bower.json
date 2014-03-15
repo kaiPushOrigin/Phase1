@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-jasny": "~3.0.1-p7"
+    "bootstrap-jasny": "~3.0.1-p7",
+    "angular": "~1.2.14",
+    "angular-route": "~1.2.14"
   }
 }

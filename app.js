@@ -43,31 +43,24 @@ app.use('/bower_components',  feathers.static(__dirname + '/bower_components'));
 app.use('/node_modules',  feathers.static(__dirname + '/node_modules'));
 app.use(feathers.static(path.join(__dirname, 'public')));
 
-/*app.configure(feathers.socketio(function(io) {
-      
-  io.on('connection', function(socket) {
-      
-    // Examples
-    // - Emitting
-    socket.emit('news', { hello: 'world' });
-    // - Receiving
-    socket.on('my other event', function (data) {
-      console.log(data);
-    });
-    
-        
-  });       
-        
-  // Authentication
-  io.set('authorization', function (handshakeData, callback) {
-    // Authorize using the /users service
-    app.lookup('/api/users').find({
-      username: handshakeData.username,
-      password: handshakeData.password
-    }, callback);
-  });
-    
-}));  */
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', "*");
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
 
 
 
